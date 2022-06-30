@@ -23,5 +23,10 @@ export class LoginPage {
         const title = this.page.locator('.title')
         await expect(title).toHaveText('Products')
     }
+    
+    async userNotLoggedIn() {
+        const title = this.page.locator('.error-message-container')
+        await expect(title).toHaveText('Epic sadface: Username and password do not match any user in this service')
+    }
 
 }
